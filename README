@@ -1,0 +1,42 @@
+Tetris Game // All the features except pause and resume are available now 
+=========================================================================
+
+#####################################################################
+#                                                                   #
+# License: Boost Ver 1.0+                                           #
+# Project: https://github.com/yongye/c                              #
+# Project: https://github.com/yongye/go                             #
+# Project: https://github.com/yongye/cpp                            #
+# Project: https://github.com/yongye/shell                          #
+# Author : YongYe <complex.invoke@gmail.com>                        #
+#                                                                   #
+#####################################################################
+
+Detailed game Screenshots and the core Algorithm were offered by the one developed in Shell
+
+Compile the source code :
+   Run
+       make
+   Or
+       g++ -m64 -std=c++11 -s -Wall -O3 -l pthread -o Tetris_Game Tetris_Game.cpp
+   Or  
+       clang++ -m64 -std=c++11 -s -Wall -O3 -l pthread -o Tetris_Game Tetris_Game.cpp
+
+Run the game :
+   runlevel     :  Complexity of the pieces             ( Default value is 31 )
+   previewlevel :  Number of the pieces to be previewed ( Default value is 6  )
+   speedlevel   :  Speed of the current piece's descent ( Default value is 0  )
+   width        :  Width of the game area               ( Default value is 25 )
+   height       :  Height of the game area              ( Default value is 30 )
+
+   Usage        :  ./Tetris_Game [ <runlevel> [ <previewlevel> [ <speedlevel> [ <width> [height] ] ] ] ] 
+   Range        :  [ 0 <= runlevel <= 31 ]   [ previewlevel >= 1 ]   [ speedlevel <= 8 ]   [ width >= 17 ]   [ height >= 10 ]
+   Notice       :  runlevel previewlevel speedlevel width height belong to integer
+
+Tested Platform : 
+   [root@node ~]# cat /etc/redhat-release 
+   Fedora release 20 (Heisenbug)
+   [root@node ~]# uname -a
+   Linux node 3.13.6-200.fc20.x86_64 #1 SMP Fri Mar 7 17:02:28 UTC 2014 x86_64 x86_64 x86_64 GNU/Linux
+   [root@node c]# gcc --version | grep gcc
+   gcc (GCC) 4.8.2 20131212 (Red Hat 4.8.2-7)
