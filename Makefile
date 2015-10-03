@@ -5,7 +5,7 @@ PG = Tetris_Game
 SOURCE = Tetris_Game.cpp
 OBJECTS = Tetris_Game.o
 CXXFLAGS = -std=c++11 -s -Wall -O3
-LDLIBS = -l pthread
+LDLIBS = -pthread
 
 ${PG}: ${OBJECTS}
 	${CXX} ${CXXFLAGS} ${LDLIBS} -o ${PG} ${OBJECTS}
