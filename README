@@ -20,7 +20,7 @@ Compile the source code :
    Or
        g++ -m64 -std=c++11 -s -Wall -O3 -l pthread -o Tetris_Game Tetris_Game.cpp
    Or  
-       clang++ -m64 -std=c++11 -s -Wall -O3 -l pthread -o Tetris_Game Tetris_Game.cpp
+       clang++ -m64 -std=c++11  -Wall -O3 -l pthread -o Tetris_Game Tetris_Game.cpp
 
 Run the game :
    runlevel     :  Complexity of the pieces             ( Default value is 31 )
