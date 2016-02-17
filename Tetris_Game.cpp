@@ -84,7 +84,7 @@ const string gmover = "\e[?25h\e[36;26HGame Over!\e[0m\n";
 
 static struct termios oldt;
 
-void wait(int);
+void wait_time(int);
 void runleave(int);
 int get_args(vector<string>&);
 void restore_terminal_settings();
@@ -234,7 +234,7 @@ void disable_waiting_for_enter()
      atexit(restore_terminal_settings);
 }
 
-void wait(int n)
+void wait_time(int n)
 {
      this_thread::sleep_for(chrono::milliseconds(n));
 }
@@ -245,7 +245,7 @@ void runleave(int n)
           cout << gmover;
      else
      {
-        if ( n == 1 ) sig = 22;
+         if ( n == 1 ) sig = 22;
         cout << "\e[?25h\e[36;4H\n";
      }
 }
@@ -443,7 +443,7 @@ void get_time::current()
      while (true)
      {
         if ( sig == 22 ) { runleave(0); break; }
-        thread time_thread(wait, 1000);
+        thread time_thread(wait_time, 1000);
         time.clear();
         set_time(second, minute, 0);
         set_time(minute, hour, 1);
@@ -708,7 +708,7 @@ void piece::bomb(int x, int y, int size)
                init(p, q); 
           }
      }
-     wait(0);
+    wait_time(0);
      cout << empty << endl;
 } 
 
@@ -749,7 +749,7 @@ int piece::persig()
     int j = 0;
     while ( ++j )
     {
-         if ( j != 1 ) wait(100);
+         if ( j != 1 ) wait_time(100);
          int sigswap = sig;
          sig = 0;
          switch (sigswap)
